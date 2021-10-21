@@ -80,7 +80,7 @@ This code was tested with python TBD, cuda TBD and pytorch TBD on TBD.
 
 ### Install dependencies:
 ``` 
-python -m pip install -r code/dependencies.txt
+python -m pip install -r code/requirements.txt
 ```
 
 ## Video Denoising
