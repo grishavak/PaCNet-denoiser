@@ -110,7 +110,7 @@ python code/process_video_sequence.py --in_folder <in_folder> --file_ext <file_e
 
 #### For demo run
 ```
-python code/process_video_sequence.py --gpu_usage 1 --save_jpg --save_avi --plot
+python code/process_video_sequence.py --gpu_usage 1 --save_jpg --save_avi
 ```
 
 #### For denoising a video sequence in your code call *denoise_video_sequence* function
@@ -194,7 +194,7 @@ python code/process_image.py --in_folder <in_folder> --im_name <im_name> --out_f
 
 #### For demo run
 ```
-python code/process_image.py --gpu_usage 1 --plot --save
+python code/process_image.py --gpu_usage 1 --save
 ```
 
 #### For denoising an image in your code call *denoise_image* function
