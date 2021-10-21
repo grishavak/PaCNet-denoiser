@@ -189,7 +189,7 @@ python code/process_image.py --in_folder <in_folder> --im_name <im_name> --out_f
 - **gpu_usage** - GPU usage: <br>
                   0 - use CPU, <br>
                   1 - use GPU for nearest neighbor search, <br>
-                  2 - use GPU for whole processing (requires large about 10GB GPU memory)
+                  2 - use GPU for whole processing (requires about 10GB GPU memory)
 - **[--plot]** (flag) - plot a frame from the processed video sequence
 
 #### For demo run
@@ -208,7 +208,7 @@ denoise_image(<noisy_im>, <sigma>, [gpu_usage])
 - **gpu_usage** (optional) - GPU usage: <br>
                   ***0*** - use CPU, <br>
                   1 - use GPU for nearest neighbor search, <br>
-                  2 - use GPU for whole processing (requires large about 10GB GPU memory)
+                  2 - use GPU for whole processing (requires about 10GB GPU memory)
 
 #### Outputs:
 - **denoised_im** - denoised image
@@ -227,7 +227,7 @@ python code/process_image_set.py --in_folder <in_folder> --out_folder <out_folde
 - **gpu_usage** - GPU usage: <br>
                   0 - use CPU, <br>
                   1 - use GPU for nearest neighbor search, <br>
-                  2 - use GPU for whole processing (requires large about 10GB GPU memory)
+                  2 - use GPU for whole processing (requires about 10GB GPU memory)
 
 #### For denoising BSD68 test set run
 ```
