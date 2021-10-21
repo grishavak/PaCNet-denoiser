@@ -70,7 +70,7 @@ PaCNet can be used as a single image denoiser. The following table reports the d
 | PaCNet (ours) | 33.95 | 31.22 | 27.93 | 31.03 |
 
 # Code
-This code was tested with python TBD, cuda TBD and pytorch TBD on TBD.
+This code was tested with python 3.9, cuda 11.4 and pytorch 1.9 on GeForse GTX 1080 Ti and Quadro RTX 8000 (for video denoising with option *gpu_usage=2*).
 
 ## Requirements
 - numpy
@@ -105,7 +105,7 @@ python code/process_video_sequence.py --in_folder <in_folder> --file_ext <file_e
 - **gpu_usage** - GPU usage: <br>
                   0 - use CPU, <br>
                   1 - use GPU for nearest neighbor search, <br>
-                  2 - use GPU for whole processing (requires large GPU memory)
+                  2 - use GPU for whole processing, requires large GPU memory (about 20-30GB))
 - **[--plot]** (flag) - plot a frame from the processed video sequence
 
 #### For demo run
@@ -128,7 +128,7 @@ denoise_video_sequence(<noisy_vid>, <vid_name>, <sigma>, [clipped_noise], [gpu_u
 - **gpu_usage** (optional) - GPU usage: <br>
                 ***0*** - use CPU, <br>
                 1 - use GPU for nearest neighbor search, <br>
-                2 - use GPU for whole processing (requires large GPU memory)
+                2 - use GPU for whole processing, requires large GPU memory (about 20-30GB)
 
 #### Outputs:
 - **denoised_vid** - denoised video sequence
@@ -154,7 +154,7 @@ python code/process_video_sequence.py --in_folder <in_folder> --file_ext <file_e
 - **gpu_usage** - GPU usage: <br>
                   0 - use CPU, <br>
                   1 - use GPU for nearest neighbor search, <br>
-                  2 - use GPU for whole processing (requires large GPU memory)
+                  2 - use GPU for whole processing, requires large GPU memory (about 20-30GB)
 - **max_frame_num** - limit for maximum number of denoised frames in each video sequence in the set. Default: *85*.
 - **[--silent]** (flag) - don't print "done" every frame.
 
@@ -186,7 +186,10 @@ python code/process_image.py --in_folder <in_folder> --im_name <im_name> --out_f
 - **sigma** - noise sigma: {*15*, *25*, *50*}. Default: *25*
 - **[--save]** (flag) - save the denoised image
 - **out_folder** - output foldeer. Default: *./output/images/demo/*
-- **gpu_usage** - GPU usage: 0 - use CPU, 1 - use GPU
+- **gpu_usage** - GPU usage: <br>
+                  0 - use CPU, <br>
+                  1 - use GPU for nearest neighbor search, <br>
+                  2 - use GPU for whole processing (requires large about 10GB GPU memory)
 - **[--plot]** (flag) - plot a frame from the processed video sequence
 
 #### For demo run
@@ -202,7 +205,10 @@ denoise_image(<noisy_im>, <sigma>, [gpu_usage])
 #### Parameters
 - **noisy_im** (required) - noisy image
 - **sigma** (required) - noise sigma: {*15*, *25*, *50*}
-- **gpu_usage**(optional) - GPU usage: ***0*** - use CPU, 1 - use GPU
+- **gpu_usage** (optional) - GPU usage: <br>
+                  ***0*** - use CPU, <br>
+                  1 - use GPU for nearest neighbor search, <br>
+                  2 - use GPU for whole processing (requires large about 10GB GPU memory)
 
 #### Outputs:
 - **denoised_im** - denoised image
@@ -218,7 +224,10 @@ python code/process_image_set.py --in_folder <in_folder> --out_folder <out_folde
 - **sigma** - noise sigma: {*15*, *25*, *50*}. Default: *25*
 - **[--save]** (flag) - save the denoised images
 - **out_folder** - path to folder for saving denoised images. Default: *./output/images/set/*
-- **gpu_usage** - GPU usage: 0 - use CPU, 1 - use GPU
+- **gpu_usage** - GPU usage: <br>
+                  0 - use CPU, <br>
+                  1 - use GPU for nearest neighbor search, <br>
+                  2 - use GPU for whole processing (requires large about 10GB GPU memory)
 
 #### For denoising BSD68 test set run
 ```

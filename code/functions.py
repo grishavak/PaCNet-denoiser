@@ -14,7 +14,10 @@ from modules import *
 # Inputs:
 # noisy_im - noisy image
 # sigma - noise sigma {15, 25, 50}
-# gpu_usage - GPU usage: 0 - use CPU, 1 - use GPU
+# gpu_usage - GPU usage: 
+#             0 - use CPU, 
+#             1 - use GPU for nearest neighbor search,
+#             2 - use GPU for whole processing (requires more GPU memory)
 #
 # Outputs:
 # denoised_im - denoised image
@@ -22,7 +25,7 @@ from modules import *
 def denoise_image(noisy_im, sigma, gpu_usage=0):
     s_cnn = ImCnn()
     
-    if gpu_usage == 1:
+    if gpu_usage == 2:
         if torch.cuda.is_available():
             noisy_im = noisy_im.cuda()
             s_cnn.cuda()
@@ -40,8 +43,7 @@ def denoise_image(noisy_im, sigma, gpu_usage=0):
         stime = time.time()
         im_n = reflection_pad_3d(noisy_im, (0, 6, 6))
         im_n = nn_func.pad(im_n, (37, 37, 37, 37, 0, 0), mode='constant', value=-1)
-        denoised_im = s_cnn(im_n)
-        denoised_im = denoised_im.clamp(0, 1)
+        denoised_im = s_cnn(im_n, gpu_usage).clamp(0, 1)
         etime = time.time()
         denoising_time = etime - stime
         denoised_im = denoised_im.cpu()
@@ -56,7 +58,10 @@ def denoise_image(noisy_im, sigma, gpu_usage=0):
 # noisy_list - list of noisy images
 # im_name_list - list of image names
 # sigma - noise sigma {15, 25, 50}
-# gpu_usage - GPU usage: 0 - use CPU, 1 - use GPU
+# gpu_usage - GPU usage: 
+#             0 - use CPU, 
+#             1 - use GPU for nearest neighbor search,
+#             2 - use GPU for whole processing (requires more GPU memory)
 # silent - boolean flag: False - print "done" every image
 #                         True - don't print "done" every image
 #
@@ -66,7 +71,7 @@ def denoise_image(noisy_im, sigma, gpu_usage=0):
 def denoise_image_list(noisy_list, im_name_list, sigma, gpu_usage, silent):
     s_cnn = ImCnn()
 
-    if gpu_usage == 1: 
+    if gpu_usage == 2: 
         if torch.cuda.is_available():
             s_cnn.cuda()
         else:
@@ -88,8 +93,7 @@ def denoise_image_list(noisy_list, im_name_list, sigma, gpu_usage, silent):
             stime = time.time()
             im_n = reflection_pad_3d(im_n, (0, 6, 6))
             im_n = nn_func.pad(im_n, (37, 37, 37, 37, 0, 0), mode='constant', value=-1)
-            denoised_im = s_cnn(im_n)
-            denoised_im = denoised_im.clamp(0, 1)
+            denoised_im = s_cnn(im_n, gpu_usage).clamp(0, 1)
             etime = time.time()
             denoising_time = etime - stime
             denoised_im = denoised_im.cpu()

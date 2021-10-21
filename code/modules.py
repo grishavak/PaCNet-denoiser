@@ -382,8 +382,12 @@ class ImCnn(nn.Module):
 
         return in_layers
 
-    def forward(self, seq_in):
-        min_i = self.find_sorted_nn(seq_in)
+    def forward(self, seq_in, gpu_usage):
+        if gpu_usage == 1 and torch.cuda.is_available():
+            min_i = self.find_sorted_nn(seq_in.cuda()).cpu()
+        else:
+            min_i = self.find_sorted_nn(seq_in)
+
         in_layers = self.create_layers(seq_in, min_i)
         in_layers = in_layers.squeeze(-3)
 
