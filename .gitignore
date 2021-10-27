@@ -4,3 +4,4 @@ code __pycache__/*
 logs/*
 output/*
 .vscode/*
+*.bash
