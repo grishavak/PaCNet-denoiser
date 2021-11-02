@@ -1,3 +1,9 @@
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/patch-craft-video-denoising-by-deep-modeling/video-denoising-on-davis-sigma10)](https://paperswithcode.com/sota/video-denoising-on-davis-sigma10?p=patch-craft-video-denoising-by-deep-modeling)
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/patch-craft-video-denoising-by-deep-modeling/video-denoising-on-davis-sigma20)](https://paperswithcode.com/sota/video-denoising-on-davis-sigma20?p=patch-craft-video-denoising-by-deep-modeling)
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/patch-craft-video-denoising-by-deep-modeling/video-denoising-on-davis-sigma30)](https://paperswithcode.com/sota/video-denoising-on-davis-sigma30?p=patch-craft-video-denoising-by-deep-modeling)
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/patch-craft-video-denoising-by-deep-modeling/video-denoising-on-davis-sigma40)](https://paperswithcode.com/sota/video-denoising-on-davis-sigma40?p=patch-craft-video-denoising-by-deep-modeling)
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/patch-craft-video-denoising-by-deep-modeling/video-denoising-on-davis-sigma50)](https://paperswithcode.com/sota/video-denoising-on-davis-sigma50?p=patch-craft-video-denoising-by-deep-modeling)
+
 # PaCNet
 
 [Arxiv](https://arxiv.org/pdf/2103.13767.pdf) | [CVF (pdf)](https://openaccess.thecvf.com/content/ICCV2021/papers/Vaksman_Patch_Craft_Video_Denoising_by_Deep_Modeling_and_Patch_Matching_ICCV_2021_paper.pdf) | [CVF (suppl)](https://openaccess.thecvf.com/content/ICCV2021/supplemental/Vaksman_Patch_Craft_Video_ICCV_2021_supplemental.pdf)
@@ -247,6 +253,8 @@ If you use this code for your research, please cite our paper:
     pages     = {2157-2166}
 }
 ```
+
+![visitor badge](https://visitor-badge.glitch.me/badge?page_id=grishavak/PaCNet-denoiser)
 
 # References and Footnotes
 [^1]: Matteo Maggioni, Giacomo Boracchi, Alessandro Foi, and Karen Egiazarian. Video denoising using separable 4-D nonlocal spatiotemporal transforms.
